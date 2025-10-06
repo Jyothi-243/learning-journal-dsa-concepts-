@@ -1,0 +1,39 @@
+creating a database: 
+    create database db_name; 
+    use db_name; //to go to that DB. 
+    select database(); //to know we are in which database  
+    show dbs; //it will show all databases.
+
+creating table and inserting data: 
+    create table table_name(col1 dataType, col2 dataType ....);
+    Example: create table students (rno int, name varchar(100), class varchar(100))      //if rollno. and alphabets are mixed then we have to use varchar. 
+    study mysql dataTypes. (int , BigInt , text , boolean , date , dateTime )
+    show tables; //it will show all the tables in the current database. 
+
+    inserting: 
+    insert into table_name values (val1,val2,val2) //values are based on the column. 
+    Example: insert into students values (12, "priya" , 'inter');
+
+Reading/retrieving the data from the table;
+    select * from students ; // "*" returns all columns.   
+    select name, class from students;  //returns only name and class columns. means we can retrieve only specific columns also. kind of rule in the rows. 
+    
+    for the rows condition , we use where condition (for rows filtering)
+    select * from students where rno=12;  // for varchar then we use Quotes where class = 'inter'; 
+
+Update the data in the table: 
+    update table_name set col = value;
+    update students set name= 'jyothi" //it will set all the column values as "jyothi" , 
+    update students set name = "jyothi" where class = 'inter' //it will update only the rows where the class is inter. 
+
+Deleting data from the table: 
+    delete from  table_name ;
+    delete from students; 
+    delete from students where rno = 12; only delete the persons whose rno is 12.  
+
+
+Port for the mysql is 3306,  localhost or 127.0.0.1 
+Oracle runs on the port 1521.  
+
+
+
