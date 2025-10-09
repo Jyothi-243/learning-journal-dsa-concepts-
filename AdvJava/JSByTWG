@@ -1,0 +1,263 @@
+JS: (makes our webpage Dynamic) 
+<script type=”text/javascript”> </script>// then browsers can understand easily. That the code is js. (we can write in head or body tags). 
+<style> tag will be written in the head tag only. 
+
+Js Output: 
+document.write(“Hello”); (it will keep this in the body tag of html). Here document is the object. 
+innerHTML (if we want from the any tag, means h1, like that then we use innerHTML) document.getElementById(“special”).innerHTML= “ i am innerhtml ”<h1 id =”special”></h1> and the script must be placed down the code means after the special id (h1 tag) , otherwise it wont give the proper output.
+window.alert(“Hello”) (for the imp messages so that user can click “ok” and read the messages.) executed based on the order. 
+
+JS Comments: 
+// , /*   ……*/	
+
+JS Variables: 
+Var a = new Array();
+Data types: number, string, boolean, array, undefined, null. (here null is object).js is known as the dynamic typed languages. (as the type of the data is assigned dynamically). 
+
+JS Popup Boxes: 
+Popup boxes are used for the 
+. alert boxes(window.alert()) 
+, confirmation box(window.confirm()) //yes or no
+, prompt box(when we want to take the input from the user.)(window.prompt()). 	
+
+We can write like this, 
+document.write(“<h1> Hello “ +name+” welcome to my website</h1>” 
+
+Operators in Java: 
+Arithmetic operators, Arithmetic assignment operators, Comparison operators, (<=,>=....), 
+Logical operators( &&(logical And) , ||(Logical Or), !(Logical not)), Assignment operator.
+Bitwise Operators:  
+Here integers are converted into binary numbers. And then calculated.  
+Bitwise AND  (&) (if both are non-zero , result is true)
+Bitwise OR     (|)  (if any one is non-zero result is true)
+BItwise NOT   (~)  ()
+Bitwise XOR   (^)   (if both values are same then result is false, otherwise true )
+Left Shift         (<<)  (shifting the digits to left)
+Right Shift	(>>)  (shifting the digits to the right.)
+Conditional (ternary operator) : 
+Condition ? statement 1: statement 2 
+
+
+
+Functions in JavaScript: 
+In Js,  we have the events based on the events , we execute the functions. 
+Syntax: 
+function functionname (optional parameters){
+	function code //we can use the return(stmt) also. 
+}
+
+When we click on the button then i want to execute the function. Means we add the onClick() event. 
+—> onmouseover = “fun()” in JS. 
+
+Var a = document.getElementById(“id_name”).value; //we can get the value from that id element.
+
+→ in Js , we have parseInt() , we can convert the string to integer.
+→ in JS, we have the Number(), then we can convert the (see the purpose)
+   
+Arrays In JS: 
+
+Creating an array : 
+Var a = new Array (10,20,30); //accessing a[1]
+Var b = [10,20,30];
+
+Switch syntax: 
+switch (expression){
+case – : statements;
+	break;
+case – : statements;
+	break;
+case – : statements;
+break;
+default : statements;
+} 
+
+
+Date Object in JS: (4 types in JS) : 
+new Date() //takes current date and we can retrieve the year date, like that
+new Date(milliseconds) //1970 january 1st , it will add the milliseconds from that date. 
+new Date(datestring) //in this constructor we can specify the our specified date(year, month, date).
+new Date(year, month, date[,hour, minute,second, milliseconds]) //here it will accept all the values. 
+
+let d = new Date();
+console.log(d.getDay());
+console.log(d.getDate());
+d. getFullYear();
+d.getHours();
+d.getMinutes();
+d.getSeconds(); 
+
+
+When we give the milliseconds it calculates from 1/1/1970. 
+let d = new Date(45000); //it will take those milliseconds. 
+
+DateString: 
+let d = new Date(‘january 27 2013‘); 
+let d = new Date(2020, 04,03);
+let d = new Date(2020, 04,03,05,30,45); //here hours minutes seconds also. 
+
+Objects in JS: 
+Object :  Collection of properties. 
+Var person = {name:’priya’, age:35,channel:”twg”}
+Here we have name or keys and values. 
+
+Accessing in objects: (person.name);  or
+person[‘age’]; //here we access like the array. , we use single quotation.
+
+If we want to add the another pair then , person[‘city’] = “banglore”;
+For the values , we can have the simple value or a function also. They can carry the function also. 
+While writing the function also, when we want to access anything in the sameobject then we use this.name , this.age , 
+
+(.) dot operator or period operator. 
+Implementing the function which is in the object. 
+console.log(person.functionName()) // we have to call the function. 
+
+Events in JS :
+Based on the events i want to call functions. (mouse hover, click on the button, selecting/deselecting radio button, checking checkbox,clicking on the text box , clicking out of the textbox. Pressing a key ,onLoad event )
+onchange(used for the checking checkbox, radio button(select/deselect) ,  )
+, onclick,(for the buttons, we use this)
+ ondblclick,(on double click , we use this)
+onmouseover,()
+ onmouseout,  // out of the button means hovered and then out. 
+onkeydown,  // in the input tags like that , when we click the any button .means the key is in down
+onkeyup, // pressed key released
+onkeypress,  // on key press (just press (down+up))
+onload, //means when the page is loaded,
+ onfocus,  //means when we click on the input box , input box getting focus.
+onblur,    //clicking the input box and clicking the out of the input box. Giving focus and getting out. 
+
+Errors in JavaScript: 
+
+try - identify and throw predefined errors, 
+catch  - handle the errors
+throw - to manually create and throw userdefined errors. 
+Finally - contains compulsory executable statements. 
+
+try{
+}
+try will throw the exceptions and catch will catch the exceptions. 
+
+catch(err){
+console.log(err.message); 
+}
+ 
+We dont have to keep the code after the error code in because when error occur then it wont get executed.  So we have to keep that in the finally block. 
+
+To convert the string to number, parseInt(), 
+
+We can manually throw the errors, 
+if(){
+throw new Error(“error message for throwing the error.”)
+} 
+
+
+
+
+array.splice(start, deleteCount, item1, item2, ...)
+start: The index where changes begin.
+
+deleteCount: How many elements to remove (0 if you only want to add).
+
+item1, item2, ...: New elements to insert (optional).
+
+Examples:
+
+js
+Copy code
+let arr = [1, 2, 3, 4, 5];
+
+// Remove elements
+arr.splice(2, 2);  // Removes 2 elements starting at index 2 → [1, 2, 5]
+
+// Add elements
+arr.splice(1, 0, 'a', 'b'); // Adds at index 1 without removing → [1, 'a', 'b', 2, 5]
+
+// Replace elements
+arr.splice(2, 1, 'x'); // Replaces 1 element at index 2 → [1, 'a', 'x', 2, 5]
+👉 In short: splice() directly changes the original array (unlike slice(), which makes a copy).
+
+Do you want me to also compare it with slice() (since many beginners confuse the two)
+
+Great! Let’s compare splice() and slice(), since they’re often mixed up:
+
+🔹 splice()
+Changes the original array (mutates it).
+
+
+Can remove, add, or replace elements.
+
+
+Returns an array of the removed elements.
+
+
+Example:
+
+ let arr = [1, 2, 3, 4];
+let removed = arr.splice(1, 2, "a", "b"); 
+// removed → [2, 3]
+// arr → [1, "a", "b", 4]
+
+
+
+🔹 slice()
+Does NOT change the original array (non-destructive).
+
+
+Only copies a portion of the array into a new one.
+
+
+Takes a start and end index (end is not included).
+
+
+Example:
+
+ let arr = [1, 2, 3, 4];
+let copy = arr.slice(1, 3); 
+// copy → [2, 3]
+// arr → [1, 2, 3, 4] (unchanged)
+
+
+
+✅ Quick way to remember:
+splice = modify (think: cut & paste in the original array).
+
+
+slice = copy (think: take a slice of cake without ruining the rest).
+
+
+
+
+In JavaScript, event.preventDefault() is used to stop the browser’s default action for an event.
+👉 In the case of form submission:
+Normally, submitting a form reloads the page or sends data to the server.
+
+
+If you call event.preventDefault(), it prevents that automatic submission.
+
+
+This is useful when you want to validate inputs with JavaScript first or handle the data with AJAX/fetch instead of reloading the page.
+
+
+Example:
+document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault(); // stops form from refreshing page
+  console.log("Form submission prevented!");
+});
+
+👉 In short: preventDefault() lets you control what happens when the form is submitted, instead of letting the browser handle it automatically.
+
+
+Removed 
+JS Questions: 
+Shallow and deep inJS, 
+Closures, 
+
+Client side Storage: 
+Local storage(until we clear the data in local), session storage(until tab closes), 
+cookies(useful server-side also),redis, 
+strictMode, 
+
+setTimeOut(), setInterval()
+Converting the data to our specific type(while we are taking the data from the external apis) , 
+DOM(skelton) , virtual DOM(copy of real dom) 
+
+pure components in class component, .memo in functional components(to prevent unnecessary re-renders) 

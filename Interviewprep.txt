@@ -1,0 +1,525 @@
+For the even or odd: 
+import React, { useState } from 'react';
+import "./styles.css";
+
+
+function EvenOrOddChecker() {
+ const [inputEnter, setInputEnter] = useState("");
+ const [result, setResult] = useState("Result appears here.");
+ const [loading, setLoading] = useState(false);
+
+
+ const checking = () => {
+   let trimmedval = inputEnter.trim();
+   if (trimmedval === "" || isNaN(Number(trimmedval))) {
+     setResult("Please enter a  valid number.");
+     return;
+   }
+
+
+   let num = Number(trimmedval);
+
+
+   setLoading(true);
+   setResult("Checking...");
+
+
+   setTimeout(() => {
+     if (num % 2 === 0) {
+       setResult(`The number ${num} is even.`);
+     }
+     else {
+       setResult(`The number ${num} is odd.`);
+
+
+     }
+     setInputEnter("");
+     setLoading(false);
+
+
+   }, 1000);
+ }
+
+
+ return (
+   <div className="even-odd-container">
+     <h1 className="title">Even or Odd Checker</h1>
+
+
+     <input
+       className="number-input"
+       type="text"
+       placeholder="Enter a number"
+       value={inputEnter}
+       onChange={(e) => setInputEnter(e.target.value)}
+       data-testid="number-input"
+     />
+
+
+     <button className="check-button"
+       onClick={checking}
+       disabled={loading}
+       data-testid="check-button"
+     >Check</button>
+
+
+     <div className="result-area">
+       <div className="result" data-testid={loading ? "loading" : "result"}>{result}</div>
+     </div>
+   </div>
+ );
+}
+
+
+export default EvenOrOddChecker;
+
+
+
+
+And 
+
+Confirmation Model : 
+
+import React, { useState } from 'react';
+import "./styles.css";
+
+
+function ConfirmationModal() {
+ const [open, setOpen] = useState(false);
+ const [message, setMessage] = useState("");
+
+
+ const openConfirmation = () => {
+   setOpen(true);
+ }
+
+
+ const buttonClick = (value) => {
+   setMessage(value);
+   setOpen(false);
+
+
+ }
+ return (
+   <div className="modal-container">
+     <button className="open-modal-btn" onClick={openConfirmation}
+       data-testid="open-modal-button"
+     >Open Confirmation Modal</button>
+
+
+     {open && (<div className="modal-backdrop"
+       data-testid="confirmation-modal">
+       <div className="modal-box">
+         <h2 className="modal-title"
+           data-testid="modal-title">Confirm Action</h2>
+         <p className="modal-message"
+           data-testid="modal-message">Are you sure you want to proceed?</p>
+
+
+         <div className="modal-buttons">
+           <button className="confirm-btn" onClick={() => buttonClick("Confirmed")}
+             data-testid="confirm-button">Confirm</button>
+           <button className="cancel-btn"
+             onClick={() => buttonClick("Cancelled")}
+             data-testid="cancel-button">Cancel</button>
+         </div>
+       </div>
+     </div>)}
+     <div className="action-status"
+       data-testid="action-status">{message}</div>
+   </div>
+ );
+}
+
+
+export default ConfirmationModal;
+
+
+
+
+For the counter application: // Counter.js
+import React, { useState } from 'react';
+
+
+const Counter = () => {
+ const [countervalue, setCounterValue] = useState(0);
+
+
+
+
+ const counterChange = (key) => {
+   switch (key) {
+     case "Increment":
+       setCounterValue((prev) => prev + 1);
+       break;
+     case "Decrement":
+       setCounterValue((prev) => prev - 1);
+       break;
+     case "Reset":
+       setCounterValue(0);
+       break;
+   }
+ }
+
+
+ return (
+   <div>
+     <h2>Counter: {countervalue}</h2>
+     <button onClick={() => counterChange("Increment")}>Increment</button>
+     <button
+       onClick={() => counterChange("Decrement")}
+     >Decrement</button>
+     <button onClick={() => counterChange("Reset")}
+     >Reset</button>
+   </div>
+ );
+};
+
+
+export default Counter;
+
+Flatten Nested Array: arbitrary depth means multiple levels 
+function flattenArray(arr) {
+   // Your implementation
+   let newArray = [];
+   for (let i = 0; i < arr.length; i++) {
+       if (Array.isArray(arr[i])) {
+           newArray = newArray.concat(flattenArray(arr[i]));
+       }
+       else {
+           newArray.push(arr[i]);
+       }
+   }
+   return newArray;
+}
+
+
+//For the purpose of user debugging.
+flattenArray([1, [2, [3, 4], 5], 6]);
+
+
+module.exports = flattenArray
+
+
+Copy to Clipboard: 
+import { useState } from 'react';
+
+
+function CopyClipboard() {
+ const [inputValue, setinputValue] = useState("");
+ const [copiedValue, setCopiedValue] = useState("");
+ const [errorMessage, setErrorMessage] = useState("");
+
+
+
+
+ function handleCopy() {
+   if (inputValue.trim() === "") {
+     setErrorMessage("Type some values to copy")
+     setCopiedValue("");
+   }
+   else {
+     navigator.clipboard.writeText(inputValue);
+     setCopiedValue("✔ Copied!");
+     setErrorMessage("");
+     setTimeout(() => {
+       setCopiedValue("")
+     }, 2000);
+   }
+ }
+
+
+ return (
+   <div className="copyToClipboard">
+     <h1>Copy to Clipboard</h1>
+     <p>Click the button to copy the text</p>
+
+
+     <div className="copyToClipboard-container">
+       <div className="form">
+         <label htmlFor="text">
+           Enter your text:
+           <input
+             type="text"
+             id="text"
+             data-testid="input-field"
+             value={inputValue}
+             onChange={(e) => { setinputValue(e.target.value) }}
+             placeholder="Type Something"
+           />
+         </label>
+         <button
+           onClick={handleCopy}
+           className="btn"
+           data-testid="copy-button"
+         >
+           Copy
+         </button>
+
+
+         {copiedValue && (
+           <p className="message" data-testid="copied-message">{copiedValue}</p>
+         )}
+
+
+         {errorMessage && (
+           <p className="errorMessage" data-testid="error-message">{errorMessage}</p>
+         )}
+       </div>
+     </div>
+   </div>
+ );
+}
+
+
+export default CopyClipboard;
+
+
+
+
+
+Color Explorer: 
+
+
+import React, { useState } from 'react';
+import { colorNameToHex } from "./colorData";
+import "./styles.css";
+
+
+const ColorExplorer = () => {
+ const [inputColor, setInputColor] = useState("");
+ const [hexCode, setHexCode] = useState("");
+ const [errorMessage, setErrorMessage] = useState("");
+
+
+ const onSubmit = () => {
+   console.log("search button clicked");
+   const trimmedValue = inputColor.trim().toLowerCase();
+
+
+   if (!trimmedValue) {
+     setErrorMessage("Please enter a color name");
+     setHexCode("");
+     return;
+   }
+   const hexval = colorNameToHex(trimmedValue);
+   if (!hexval) {
+     setErrorMessage("Sorry, I couldn't recognize that color.")
+     setHexCode("");
+   }
+   else {
+     setHexCode(hexval);
+     setErrorMessage("");
+   }
+ }
+
+
+ return (
+   <div className="container">
+     <h1>Color Explorer</h1>
+     <div className="input-section">
+       <input
+         type="text"
+         data-testid="color-input"
+         placeholder="Type a color name e.g. lavender"
+         value={inputColor}
+         onChange={(e) => { setInputColor(e.target.value) }}
+       />
+       <button data-testid="search-button"
+         onClick={onSubmit}>
+         🔍
+       </button>
+     </div>
+     {errorMessage && <div className="error"
+       data-testid="error-msg">
+       {errorMessage}
+     </div>}
+     {hexCode && (
+       <div className="color-box" data-testid="color-box">
+         <div
+           className="preview"
+           role="presentation"
+           data-testid="color-preview"
+           style={{ backgroundColor: hexCode }}
+         ></div>
+         <p data-testid="color-name">
+           <strong>Name: </strong> {inputColor}
+         </p>
+         <p data-testid="color-hex">
+           <strong>Hex: </strong> {hexCode}
+         </p>
+       </div>
+     )}
+
+
+
+
+   </div>
+ );
+};
+
+
+export default ColorExplorer;
+
+
+
+
+Power of three : 
+And same logic for the 2/3/4 : 
+
+function isPowerOfThree(n) {
+
+
+   if (n <= 0) return false;
+   if (n === 1) return true;
+   if (n % 3 !== 0) {
+       return false;
+   }
+   return isPowerOfThree(Math.floor(n / 3));
+
+
+}
+module.exports = { isPowerOfThree };
+
+
+
+Power of four:
+function isPowerOfFour(n) {
+ // your function implementation
+
+
+ if (n <= 0) return false;
+ if (n === 1) return true;
+ if (n % 4 !== 0) return false;
+ return isPowerOfFour(Math.floor(n / 4));
+}
+
+
+module.exports = { isPowerOfFour };
+
+
+Finding the maxNumber: 
+function findMaxNumber(arr) {
+   if (!arr.length) return null;
+   let maxNumber = -Infinity;
+   for (let i = arr.length; i >= 0; i--) {
+       if (arr[i] > maxNumber) {
+           maxNumber = arr[i];
+       }
+   }
+   return maxNumber;
+}
+
+
+//For the purpose of user debugging.
+findMaxNumber([1, 2, 3, 4, 5]);
+
+
+module.exports = findMaxNumber
+
+Largest Number formed: 
+function formLargestNumber(arr) {
+  // Step 1: Convert numbers to strings (since we need concatenation comparisons)
+  let strArr = arr.map(String);
+  console.log("strrrrrrrr",strArr);//string conversion of the numbers array.
+
+  // Step 2: Custom sort based on concatenated results
+  strArr.sort((a, b) => (b + a).localeCompare(a + b));
+
+  // Step 3: Join them into one big string
+  let result = strArr.join("");
+
+  // Step 4: Handle edge case like [0, 0] => "0" not "00"
+  return result[0] === "0" ? "0" : result;
+}
+
+const input = [3, 30, 34, 5, 9];
+console.log(formLargestNumber(input)); // "9534330"
+
+module.exports = formLargestNumber;
+
+
+I did not understand the code properly i have to DRY run the code . 
+
+ Search in the rotated array : 
+function searchRotatedArray(nums, target) {
+  let left = 0;
+  let right = nums.length - 1;
+
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+
+    if (nums[mid] === target) {
+      return mid; // Found
+    }
+
+    // Check if left half is sorted
+    if (nums[left] <= nums[mid]) {
+      // Target in left half?
+      if (nums[left] <= target && target < nums[mid]) {
+        right = mid - 1;
+      } else {
+        left = mid + 1;
+      }
+    }
+    // Otherwise, right half is sorted
+    else {
+      // Target in right half?
+      if (nums[mid] < target && target <= nums[right]) {
+        left = mid + 1;
+      } else {
+        right = mid - 1;
+      }
+    }
+  }
+
+  return -1; // Not found
+}
+
+// For debugging
+console.log(searchRotatedArray([4,5,6,7,0,1,2], 0)); // 4
+console.log(searchRotatedArray([4,5,6,7,0,1,2], 3)); // -1
+console.log(searchRotatedArray([1], 0)); // -1
+
+module.exports = searchRotatedArray;
+
+
+
+And  
+Capitalize the words 
+
+function capitalizeWords(sentence) {
+   // Your implementation
+
+
+   if (!sentence) return "";
+
+
+   // Step 1: normalize spacing and case
+   sentence = sentence.trim().toLowerCase();
+   console.log(sentence);
+
+
+   // Step 2: split into words (one or more spaces)
+   sentence = sentence.split(/\s+/);
+
+
+   console.log(sentence);
+   for (let i = 0; i < sentence.length; i++) {
+       let first = sentence[i].charAt(0).toUpperCase();
+       let end = sentence[i].slice(1);
+       sentence[i] = first + end;
+   }
+
+
+   return sentence.join(" ");
+}
+
+
+//For the purpose of user debugging.
+capitalizeWords("javaScript is    FUN");
+module.exports = capitalizeWords
+
+
+And 
+

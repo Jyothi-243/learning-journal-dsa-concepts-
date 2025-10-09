@@ -40,12 +40,16 @@ JDBC Project in Ecllipse IDE:
 
 Servlet : Servlet is a java program which can run only in the server. (tomcat, jbose...), in servlets we have to use "response.getWriter" to display the data instead of system.out.println.
 we use prepared stmt to avoid sql Injection. 
---> when we are passing the data , after submitting the form , we have to send that securily, (means in the url , we dont have to send the information, so we have to method = "POST", if we dont give anything then it will take Method = GET)    
+--> when we are passing the data , after submitting the form , we have to send that securily, (means in the url , we dont have to send the information, so we have to method = "POST", if we dont give anything then it will take Method = GET) ,   
+
+sending parameters to servlets: 
+
 
 Creating a table : 
 create table users(id int primary key AUTO_INCREMENT, name varchar(500), contact varchar(15), email varchar(250), address varchar(500), password varchar(100));     
 desc tables; //to show the description of the table.
 
 using col-span to occupy the number of rows. (col-span:2)
+
 
 
