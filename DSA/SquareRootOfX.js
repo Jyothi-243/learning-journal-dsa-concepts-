@@ -14,7 +14,6 @@ var mySqrt = function (x) { //LeetCode Problem
 
 var mySqrt = function (x) {
     if (x < 2) return x;
-    // if (x >= 2) {
     let right = Math.floor(x / 2);
     let left = 2;
     while (left <= right) {
@@ -29,7 +28,7 @@ var mySqrt = function (x) {
         }
     }
     return right;
-    // }
 };
 
 
+ 

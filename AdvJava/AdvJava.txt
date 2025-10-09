@@ -35,5 +35,7 @@ Deleting data from the table:
 Port for the mysql is 3306,  localhost or 127.0.0.1 
 Oracle runs on the port 1521.  
 
+JDBC Project in Ecllipse IDE: 
+
 
 
