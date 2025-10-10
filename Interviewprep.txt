@@ -261,7 +261,6 @@ function CopyClipboard() {
            <p className="message" data-testid="copied-message">{copiedValue}</p>
          )}
 
-
          {errorMessage && (
            <p className="errorMessage" data-testid="error-message">{errorMessage}</p>
          )}
