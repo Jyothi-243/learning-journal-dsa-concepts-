@@ -3,7 +3,7 @@
 let arr = [7,1,5,12,-10,0,4,3,2];
 
 function insertionSort(arr){
-    for(let i =0 ; i<arr.length;i++){
+    for(let i =1 ; i<arr.length;i++){ //as first element is always sorted.  
            let curr = arr[i]
            let prev = i-1;
            while(arr[prev]>curr && prev>=0){
