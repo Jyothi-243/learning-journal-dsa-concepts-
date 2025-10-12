@@ -46,6 +46,11 @@ JSP(java server pages):
 --> after the servlets jsp came, (extension -> .jsp ), for jsp file no need of the web.xml file and no need to compile and keep the .class file in classes folder. we can write the html code in jsp.
 --> in Background it will create the , servlet program. 
 --> in tomcat , we have to see the work folder, catalina,localhost, (there we can find all the )
+--> JSPC will be there , so it will compile the whole jsp program.
+--> To print in the browser, we use out.println and when we use system.out.println then it will be printed in the server. 
+
+JSP Elements 
+
 
 Creating a table : 
 create table users(id int primary key AUTO_INCREMENT, name varchar(500), contact varchar(15), email varchar(250), address varchar(500), password varchar(100));     
