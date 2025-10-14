@@ -60,3 +60,21 @@ using col-span to occupy the number of rows. (col-span:2)
 
 
 
+State Management :
+-> while creating web applications, we use http protocol, (http is stateless protocol)
+for managing the state, we use Hidden Variables, cookies, sessions , sessions with URL re-writing. 
+-> for hidden variables , we have to move the hidden variables every time from server to the client (it tooks lots of burden , so we dont use this.)
+
+Cookies: Creation : Cookie c1 = new Cookie(name,Value) //cookies will be created only once they will be transfered to the client. They will be stored in Clients browser. 
+Cookiess : are special type of variable , they will get stored in the clients browser , 
+or (small amount of info set by the server in client browser). (name value info).
+
+Disadvantages in Cookies: 
+when the users block the cookies, sensitive info .
+
+Session: we have to create session object : creation : (session means when we visit website and close website and in-between is the session.)
+HttpSession session = request.getSession(true);  // it will secure the sensitive data. (we can use session directly as it is implict variable)
+session.setAttribute(); , getAttribute
+
+Session with URL re-writing : 
+when the user disables the cookies then we use this (kind of hidden variables concept(passing variables for every request))
