@@ -12,3 +12,5 @@ var peakIndexInMountainArray = function (arr) {
     }
     return l;
 };
+
+//Moutain array means , It will have only one peak (Binary search can be applied on the sorted array , rotated sorted array also).IMP point.
