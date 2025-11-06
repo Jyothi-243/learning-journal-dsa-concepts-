@@ -1,1 +1,8 @@
 Material UI : 
+    Typography(text-content) : used for displaying the text content(instead of using paragraph and heading). Typography takes so many props (varient= "h1") // <typography varient= "h4" >
+    for the input fields in the form ,we have to use text tags in material UI. 
+    <AppBar> </AppBar> component  and <Toolbar> </Toolbar>  , 
+    <Container> </Container> 
+    <Typography paragraph>
+    we can use inline- styling also in the material-ui components. 
+    <Container style = {{"":""}}> </Container>  
