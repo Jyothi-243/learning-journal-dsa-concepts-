@@ -1,0 +1,48 @@
+Learn to question. Learn to think critically. 
+
+How to manage the load on the page ? 
+Being Curious will help in raising. 
+
+While doing anything ask questions without stepping into that. (why do i write like this why do i do this , why it should be done like that ?) find answers on the internet. 
+
+Making notes : 
+Practice along with the videos.(watching dont give anything)
+Best way to make the schedule(learn one video by one day) (follow the schedule properly). Have to follow. Keep gaps between the episodes and practice alot. 
+Join discord community. 
+We will learn more while helping others. (engage with other people) 
+Request for patience, focus , attention , practice. 
+
+
+Episode -1:
+
+What is node js ? (Run Java Script everyWhere) 
+Node js is a Javascript Runtime built on Chrome’s V8 JavaScript Engine.
+Node js helps the JavaScript to run outside of the web browser. 
+Node js has Event-driven Architecture. 
+
+To run JavaScript , we always need a JS Engine. 
+
+NPM is like registry , where we can add the packages to that. 
+Node js history and 
+
+Node js - Js on Server : 
+Server : remote computer , 
+--> Every Domain name maps to an ip address. (ip points to the server(server which is a machine)).
+--> JS was used in the browser , after the node js , js can run in the node js server. 
+--> Node js is C++ code. (js Engine , developed by google and used in google chrome.V8 is c++ program)
+--> JS code will convert the js code to the machine code and it can understand by the browser.
+--> node js is a c++ application, where V8 embedded into that. 
+--> As V8 there , what is the need of the node js ?
+--> inside the server , we have the node js , inside the node js , we have V8 engine.    
+
+EcmaScript : 
+a standard followed by Java Script, (v8 - google ; spiderMonkey - fireFox ; Chakra - MicroSoft) // although every browser has their own implementation of js Engines , every js engine works same like converting the java code to the machine-understandable code.  
+--> V8 cannot go outside of the EcmaScript. 
+--> So Node js has V8 Engine and extra super powers like (API on server.V8 cannot make the api request ,On top of V8 Node js has some super features . and it is known as the Js RunTime.)
+
+we have to convert like High-level languages--> Machine Code --> Assembly Code --> Binary code. (machines can understand only binary code.)
+
+Wrapping up of the Episode : Node JS is nothing but a c++ code. V8 can be embedded into c++ application , V8 executes js code. 
+
+********* The Difference between the Great dev and average dev is being curious. ****** 
+
