@@ -4,5 +4,9 @@ Material UI :
     <AppBar> </AppBar> component  and <Toolbar> </Toolbar>  , 
     <Container> </Container> 
     <Typography paragraph>
-    we can use inline- styling also in the material-ui components. 
-    <Container style = {{"":""}}> </Container>  
+1.we can use inline- styling also in the material-ui components. 
+<Container style = {{"marginTop":"70px", "TextAlign":"center"}}> </Container>  
+
+we can use <ImageList rowHeight={170} cols = {3}> <ImageListItem></ImageListItem></ImageList>  
+// we can use rowHeight to mention height of the row. 
+<img src = {} alt = {}/> //pixabay website. 
