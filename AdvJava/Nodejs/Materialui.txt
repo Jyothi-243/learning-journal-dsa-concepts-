@@ -10,3 +10,6 @@ Material UI :
 we can use <ImageList rowHeight={170} cols = {3}> <ImageListItem></ImageListItem></ImageList>  
 // we can use rowHeight to mention height of the row. 
 <img src = {} alt = {}/> //pixabay website. 
+
+<center> </center> // when we want to make the content as center 
+
